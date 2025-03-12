@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Ucciono</ion-title>
+    <ion-title>Instagram</ion-title>
     <ion-buttons slot="end">
       <ion-button>
         <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
@@ -13,16 +13,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-layout>
-    <ion-list>
-      <app-historia-users></app-historia-users>
+  <ion-list>
+    <app-card-post></app-card-post>
       <app-card-post></app-card-post>
       <app-card-post></app-card-post>
       <app-card-post></app-card-post>
       <app-card-post></app-card-post>
       <app-card-post></app-card-post>
       <app-card-post></app-card-post>
-      <app-card-post></app-card-post>
-    </ion-list>
-  </app-layout>
+  </ion-list>
 </ion-content>
