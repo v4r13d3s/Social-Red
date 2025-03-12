@@ -1,0 +1,7 @@
+{
+  "name": "SocialRed",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
