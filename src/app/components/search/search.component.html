@@ -1,0 +1,19 @@
+<ion-searchbar (ionInput)="onSearch($event)" placeholder="Buscar usuarios..."></ion-searchbar>
+
+<div *ngIf="usuarios.length > 0">
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-avatar slot="start">
+        <img [src]="usuario.imagen" alt="Imagen de perfil">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ usuario.nombre }}</h2>
+        <p>{{ usuario.estado }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div *ngIf="usuarios.length === 0 && searchQuery.length > 0">
+  <p>No se encontraron usuarios.</p>
+</div>
