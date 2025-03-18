@@ -29,7 +29,6 @@
     "@capacitor/status-bar": "7.0.0",
     "@emoji-mart/data": "^1.2.1",
     "@ionic/angular": "^8.0.0",
-
     "emoji-mart": "^5.6.0",
     "firebase": "^11.4.0",
     "ionicons": "^7.0.0",
