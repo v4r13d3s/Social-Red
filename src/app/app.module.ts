@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     CommonModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideFirebaseApp(() =>
@@ -35,6 +34,6 @@ import { AppComponent } from './app.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()), // Agrega Firestore aquí
   ],
-  bootstrap: [AppComponent], 
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
