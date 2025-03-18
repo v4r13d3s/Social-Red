@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ComentariosComponent } from '../comentarios/comentarios.component';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -9,11 +10,12 @@ import { ComentariosComponent } from '../comentarios/comentarios.component';
   standalone: false
 })
 export class CardPostComponent  implements OnInit {
+  private _authService = inject(AuthService)
+  username: String | null = null;
+
   mostrarComentarios: boolean = false;
 
   constructor() { }
-
-  ngOnInit() {}
 
   abrirComentarios() {
     this.mostrarComentarios = true;
@@ -21,6 +23,10 @@ export class CardPostComponent  implements OnInit {
 
   cerrarComentarios() {
     this.mostrarComentarios = false;
+  }
+
+  ngOnInit(){
+    this.username = this._authService.getUserName();
   }
 
 }

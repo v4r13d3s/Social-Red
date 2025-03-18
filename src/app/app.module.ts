@@ -10,9 +10,10 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore'; // Importa Firestore
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StatusPopoverComponent } from './status-popover/status-popover.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, StatusPopoverComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
