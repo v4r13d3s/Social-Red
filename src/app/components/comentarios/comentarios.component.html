@@ -37,13 +37,14 @@
     <ion-avatar>
       <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Tu avatar" />
     </ion-avatar>
-    <!-- Corregido con método para manejar el input -->
+
     <ion-input placeholder="Añadir un comentario..." [value]="nuevoComentario" 
                (ionInput)="manejarInput($event)"></ion-input>
     <ion-button fill="clear" [disabled]="!nuevoComentario" (click)="publicarComentario()">
       Publicar
     </ion-button>
   </div>
+
 </div>
 
 
