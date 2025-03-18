@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ComentariosComponent } from '../comentarios/comentarios.component';
+
 
 @Component({
   selector: 'app-card-post',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
   standalone: false
 })
 export class CardPostComponent  implements OnInit {
+  mostrarComentarios: boolean = false;
 
   constructor() { }
 
   ngOnInit() {}
+
+  abrirComentarios() {
+    this.mostrarComentarios = true;
+  }
+
+  cerrarComentarios() {
+    this.mostrarComentarios = false;
+  }
 
 }

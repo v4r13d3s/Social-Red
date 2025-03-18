@@ -20,7 +20,7 @@
           </ion-button>
         </ion-col>
         <ion-col size="auto">
-          <ion-button fill="clear" style="display: flex; align-items: center;">
+          <ion-button fill="clear" style="display: flex; align-items: center;" (click)="abrirComentarios()">
             <ion-icon name="chatbubble-outline"></ion-icon>
             <p> 6 </p>
           </ion-button>
@@ -41,8 +41,8 @@
       <ion-label>
         <h3>17.636 Me gusta</h3>
         <p>Aqui feliz con el amor de mi vida te amo mucho mi amor </p>
-        <p>Ver los 47 comentarios</p>
-        <p>Agregar un comentario...</p>
+        <p (click)="abrirComentarios()" style="cursor: pointer;">Ver los 47 comentarios</p>
+        <p (click)="abrirComentarios()" style="cursor: pointer;">Agregar un comentario...</p>
       </ion-label>
     </ion-item>
   </ion-card-header>
@@ -51,3 +51,6 @@
     Hace 7 días
   </ion-card-content>
 </ion-card>
+
+<!-- Añade esto al final de tu template, fuera del ion-card -->
+<app-comentarios *ngIf="mostrarComentarios" [postId]="1" (close)  ="cerrarComentarios()"></app-comentarios>
