@@ -223,7 +223,7 @@ export class AuthService {
     }
   }
 
-  getUserName(): String | null {
+  getUserName(): string | null {
     const user = this.userInfo.getValue();
     return user?.nombre || user?.displayName || null;
   }
