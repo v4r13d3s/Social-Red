@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" class="gradient-bg">
+  <div class="gradient-shape">
+    <img src="assets/5.svg" alt="Decoración">
+  </div>
+  <div class="gradient-left"></div>
+  <div class="form-container">
+    <p class="title">Iniciar Sesión</p>
+    <form class="form" (ngSubmit)="submit()">
+      <div class="input-group">
+        <label for="email">Correo Electrónico</label>
+       
+      </div>
+      <div class="input-group">
+        <label for="password">Contraseña</label>
+        
+        <div class="forgot">
+          <a rel="noopener noreferrer" href="#">¿Olvidó su Contraseña?</a>
+        </div>
+      </div>
+      <button class="sign" type="submit">Iniciar Sesión</button>
+    </form>
+    <div class="social-message">
+      <div class="line"></div>
+      <p class="message">o</p>
+      <div class="line"></div>
+    </div>
+    <p class="signup">No tienes una cuenta
+      <a rel="noopener noreferrer" routerLink="/sign-up">Registrarte</a>
+    </p>
+  </div>
+</ion-content>

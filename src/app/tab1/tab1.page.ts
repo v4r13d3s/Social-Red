@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-tab1',
@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab1Page {
-
-  constructor() {}
-
 }

@@ -16,8 +16,9 @@ interface Comentario {
 @Component({
   selector: 'app-comentarios',
   templateUrl: './comentarios.component.html',
-  imports: [FormsModule, IonicModule, CommonModule], 
-  styleUrls: ['./comentarios.component.scss']
+  styleUrls: ['./comentarios.component.scss'],
+  standalone: false,
+
 })
 export class ComentariosComponent {
   comentarios: Comentario[] = [];
