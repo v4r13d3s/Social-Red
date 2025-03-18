@@ -25,8 +25,6 @@
         <ion-item>
           <ion-avatar class="profile-avatar2">
             <img alt="" src="assets/img/usuario.jpg" />
-            <!-- Circulito verde que indica que está en línea -->
-            <div class="status-indicator" [ngClass]="connectionStatus === 'En línea' ? 'online' : 'offline'"></div>
           </ion-avatar>
           <ion-label>
             <h2>{{username}}</h2>
@@ -54,7 +52,7 @@
           </ion-select-option>
         </ion-select>
   
-        <ion-item button (click)="editarPerfil()">
+        <ion-item button (click)="editarPerfil()" >
           Ver perfil completo
         </ion-item>
         <ion-item button (click)="cerrarSesion()">
