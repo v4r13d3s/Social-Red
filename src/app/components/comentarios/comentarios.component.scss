@@ -1,0 +1,45 @@
+.comentarios-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  .nuevo-comentario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+  }
+  button {
+    background: #0095f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .comentario {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  .acciones {
+    display: flex;
+    gap: 10px;
+  }
+  .reply-box {
+    margin-top: 5px;
+  }
+  .respuesta {
+    margin-left: 20px;
+    background: #eaeaea;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
