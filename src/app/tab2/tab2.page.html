@@ -1,17 +1,23 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Hola oscar como estas
-    </ion-title>
+    <div class="search">
+      <app-search></app-search>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let item of mediaItems">
+      <div class="media-wrapper">
+        <img *ngIf="item.type === 'image'" [src]="item.src" alt="media content">
+        <div *ngIf="item.type === 'video'" class="video-item">
+          <img [src]="item.thumbnail" alt="video thumbnail">
+          <ion-icon name="play-circle-outline" class="video-icon"></ion-icon>
+        </div>
+        <div *ngIf="item.caption" class="caption">{{ item.caption }}</div>
+      </div>
+    </div>
+  </div>
 </ion-content>
