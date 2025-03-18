@@ -36,6 +36,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('../app/components/welcome/welcome.module').then((m) => m.WelcomePageModule),
   },
+  { path: '', redirectTo: 'tabs/tab1', pathMatch: 'full' },
 ];
 @NgModule({
   imports: [
