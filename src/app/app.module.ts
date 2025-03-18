@@ -16,28 +16,6 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent, StatusPopoverComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    CommonModule,
-  ],
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'app-movil-d20ed',
-        appId: '1:323590396982:web:c5bf31141e20d6eb320c97',
-        storageBucket: 'app-movil-d20ed.firebasestorage.app',
-        apiKey: 'AIzaSyCVqak0lgpze23t6NAgCrJwiqYkKk1_8LA',
-        authDomain: 'app-movil-d20ed.firebaseapp.com',
-        messagingSenderId: '323590396982',
-      })
-    ),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()), // Agrega Firestore aquí
-  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
