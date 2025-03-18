@@ -1,0 +1,178 @@
+ion-content {
+    --background: url('/assets/Game Screen (1).svg') no-repeat center center / cover;
+    justify-content: flex-end;
+        /* Envía los botones al fondo */
+}
+
+/* Botón de inicio de sesión (sin relleno) */
+.btn-login {
+    --green: #1BFD9C;
+    font-size: 10px;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--green);
+    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+    color: var(--green);
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.btn-login:hover {
+    color: #82ffc9;
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+/* Botón de registro (con relleno) */
+.btn-register {
+    --green: #1BFD9C;
+    font-size: 12px;
+    padding: 0.6em 2em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--green);
+    background: var(--green);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(27, 253, 156, 0.5);
+}
+
+.btn-register:hover {
+    background: #16c77d;
+    box-shadow: 0 0 15px rgba(27, 253, 156, 0.7);
+    color: #fff;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    /* Ajusta la distancia del borde inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centra horizontalmente */
+    display: flex;
+    flex-direction: column-reverse;
+    /* Invierte el orden de los botones */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* Agrega espacio entre los botones */
+}
+
+.tex1{
+    position: fixed;
+        bottom: 260px;
+        /* Ajusta la distancia del borde inferior */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Centra horizontalmente */
+        display: flex;
+       flex-direction: column;
+        /* Invierte el orden de los botones */
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+}
+
+
+
+
+
+/* Texto principal del mensaje de bienvenida */
+.welcome-title {
+    font-size: 1rem;
+    /* Tamaño grande para resaltar el texto */
+    font-weight: bold;
+    color: #fff;
+    /* Blanco para destacarse en el fondo oscuro */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    /* Sombra para mayor visibilidad */
+    margin-bottom: 15px;
+    /* Separación de la descripción */
+    text-align: center;
+    /* Centrado de texto */
+}
+
+/* Descripción de la aplicación */
+.tex1 p {
+    font-size: 0.7em;
+    /* Texto más pequeño */
+    color: #c0bcbc;
+    /* Color blanco para contraste */
+    text-align: center;
+    /* Centrado del texto */
+    max-width: 80%;
+    /* Limita el ancho para que no sea tan largo */
+    margin: 0 auto;
+    /* Centrado horizontal */
+}
+
+/* Botones */
+.btn-login {
+    --green: #1BFD9C;
+    font-size: 10px;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--green);
+    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+    color: var(--green);
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+/* Botón de registro (con relleno) */
+.btn-register {
+    --green: #1BFD9C;
+    font-size: 12px;
+    padding: 0.6em 2em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--green);
+    background: var(--green);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(27, 253, 156, 0.5);
+}
+
+/* Contenedor de los botones */
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Contenedor de texto de bienvenida */
+.tex1 {
+    position: fixed;
+    bottom: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}

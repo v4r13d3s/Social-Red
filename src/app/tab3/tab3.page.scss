@@ -1,0 +1,68 @@
+.foto-portada ion-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .datos-perfil {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .foto-perfil {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 3px solid white;
+    margin-top: -40px;
+  }
+  
+  .boton-agregar {
+    margin-left: auto;
+  }
+  
+  .usuario-info {
+    padding: 16px;
+  }
+  
+  .usuario-info h2 {
+    margin: 0;
+  }
+  
+  .biografia {
+    color: gray;
+  }
+  
+  .detalles {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  ion-segment {
+    margin-top: 10px;
+  }
+
+  .publicacion {
+    display: flex;
+    align-items: flex-start; 
+  }
+
+  .publicacion ion-avatar {
+    flex-shrink: 0; 
+    margin-right: 10px;
+  }
+
+  .publicacion-imagen {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+  
+  .publicacion-video {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+  

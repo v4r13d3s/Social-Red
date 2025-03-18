@@ -1,28 +1,60 @@
-<ion-header [translucent]="true">
+
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Hola mundo desde Ionic (Tano)
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="foto-portada">
+    <ion-img src="assets/img/portada.jpg"></ion-img>
+  </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Información Importante
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Este es un ejemplo de una card dentro de un tab en Ionic. Puedes agregar más contenido aquí, como texto, imágenes o botones.
-    </ion-card-content>
-  </ion-card>
+  <div class="datos-perfil">
+    <img class="foto-perfil" src="assets/img/usuario.jpg" alt="Foto de perfil">
+    <ion-button fill="outline" class="boton-agregar">Editar Perfil</ion-button>
+  </div>
+  
+  <div class="usuario-info">
+    <h2>CeritNorts</h2>
+    <p>&#64;ceritnors</p>
+    <p class="biografia">Nana Banana</p>
+    <p class="detalles"><ion-icon name="leaf-outline"></ion-icon> Fecha de nacimiento: 12 de novimbre de 2002</p>
+    <p class="detalles" ><ion-icon name="calendar-outline"></ion-icon> Se unió en octubre de 2021</p>
+    <p class="detalles"><b>200</b> Sigiendo · <b>10</b> Seguidores</p>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-segment [(ngModel)]="publicacion">
+    <ion-segment-button value="publicaciones">Publicaciones</ion-segment-button>
+    <ion-segment-button value="multimedia">Multimedia</ion-segment-button>
+    <ion-segment-button values="Me gusta">Me gusta</ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="publicacion === 'publicaciones'">
+    <ion-list>
+      <ion-item *ngFor="let publicacion of publicaciones" class="publicacion">
+        <ion-avatar slot="start">
+          <ion-img src="assets/img/usuario.jpg"></ion-img>
+        </ion-avatar>
+      
+        <ion-label>
+          <h3>CeritNorts</h3>
+      
+          <p *ngIf="publicacion.type === 'texto'">{{ publicacion.content }}</p>
+      
+          <ion-img *ngIf="publicacion.type === 'imagen'" [src]="publicacion.content" class="publicacion-imagen"></ion-img>
+      
+          <video *ngIf="publicacion.type === 'video'" controls class="publicacion-video">
+            <source [src]="publicacion.content" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+          </video>
+      
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
