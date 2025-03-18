@@ -1,3 +1,47 @@
-<p>
-  comentarios works!
-</p>
+<div class="comentarios-container">
+  <div class="comentarios-header">
+    <h4>Comentarios</h4>
+    <ion-icon name="close-outline" (click)="cerrarComentarios()"></ion-icon>
+  </div>
+
+  <div class="comentarios-lista">
+    <div class="comentario" *ngFor="let comentario of comentarios">
+      <div class="comentario-header">
+        <ion-avatar>
+          <img [src]="comentario.avatarUrl" alt="Avatar de usuario" />
+        </ion-avatar>
+        <div class="comentario-info">
+          <div class="comentario-usuario-contenido">
+            <span class="usuario">{{ comentario.usuario }}</span>
+            <span class="contenido">{{ comentario.texto }}</span>
+          </div>
+          <div class="comentario-detalles">
+            <span class="tiempo">{{ comentario.tiempo }}</span>
+            <span class="likes">{{ comentario.likes }} me gusta</span>
+            <span class="responder">Responder</span>
+          </div>
+        </div>
+      </div>
+      <ion-button fill="clear" class="like-button" (click)="toggleLike(comentario)">
+        <ion-icon [name]="comentario.userLiked ? 'heart' : 'heart-outline'" 
+                 [color]="comentario.userLiked ? 'danger' : ''"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="ver-mas" *ngIf="hayMasComentarios">
+    <span (click)="cargarMasComentarios()">Ver más comentarios</span>
+  </div>
+
+  <div class="comentario-nuevo">
+    <ion-avatar>
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Tu avatar" />
+    </ion-avatar>
+    <!-- Corregido con método para manejar el input -->
+    <ion-input placeholder="Añadir un comentario..." [value]="nuevoComentario" 
+               (ionInput)="manejarInput($event)"></ion-input>
+    <ion-button fill="clear" [disabled]="!nuevoComentario" (click)="publicarComentario()">
+      Publicar
+    </ion-button>
+  </div>
+</div>

@@ -15,7 +15,7 @@ import { ComponentsModule } from '../components/components.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    ComponentsModule,
+    ComponentsModule
   ],
   declarations: [Tab1Page]
 })

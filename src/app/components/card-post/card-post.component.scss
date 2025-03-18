@@ -1,0 +1,47 @@
+// Estilos para la tarjeta
+ion-card {
+    margin: 16px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .post-actions {
+    margin-bottom: 0;
+  }
+  
+  // Estos estilos hacen que los textos de comentarios sean clickables
+  ion-label p {
+    &:nth-child(3), &:nth-child(4) {
+      color: #8e8e8e;
+      cursor: pointer;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  // Estilos para el componente de comentarios cuando esté visible
+  app-comentarios {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    height: 80%;
+    background-color: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    animation: slide-up 0.3s ease;
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
