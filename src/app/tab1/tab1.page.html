@@ -1,16 +1,69 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="transparent-header">
   <ion-toolbar>
-    <ion-title>Instagram</ion-title>
+    <ion-title>Perfil</ion-title>
+
     <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      <ion-button fill="clear" class="notification-button">
+        <ion-icon name="notifications"></ion-icon>
       </ion-button>
-      <ion-button>
-        <ion-icon slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon>
+
+      <!-- Botón de perfil que abre el popover -->
+      <ion-button fill="clear" class="profile-button" (click)="openPopover($event)">
+        <ion-avatar class="profile-avatar">
+          <img alt="" src="../../assets/icon/image.png" />
+        </ion-avatar>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+  <!-- Popover de opciones -->
+  <ion-popover #popover [event]="popoverEvent" [isOpen]="isPopoverOpen" (didDismiss)="isPopoverOpen = false">
+    <ng-template>
+      <ion-list>
+        <!-- Item con el perfil y el botón de cerrar -->
+        <ion-item>
+          <ion-avatar class="profile-avatar2">
+            <img alt="" src="../../assets/icon/image.png" />
+            <!-- Circulito verde que indica que está en línea -->
+            <div class="status-indicator" [ngClass]="connectionStatus === 'En línea' ? 'online' : 'offline'"></div>
+          </ion-avatar>
+          <ion-label>
+            <h2>Eliastano</h2>
+            <p>{{ connectionStatus === 'En línea' ? 'Online' : 'Sin conexión' }}</p>
+          </ion-label>
+          
+          <!-- Botón de cerrar con una "X" del lado derecho del perfil -->
+          <ion-button fill="clear" class="close-button" (click)="isPopoverOpen = false">
+            <ion-icon name="close" color="medium"></ion-icon>
+          </ion-button>
+        </ion-item>
+      
+        <ion-select label="Estado" label-placement="floating" fill="outline" [(ngModel)]="connectionStatus" placeholder="Seleccionar estado" class="select">
+          <ion-select-option value="En línea">
+            <div class="option-container">
+              <p>En línea</p>
+              <div class="status-indicator online"></div>
+            </div>
+          </ion-select-option>
+          <ion-select-option value="Sin conexión">
+            <div class="option-container">
+              <p>Sin conexión</p>
+              <div class="status-indicator offline"></div>
+            </div>
+          </ion-select-option>
+        </ion-select>
+  
+        <ion-item button (click)="editarPerfil()">
+          Ver perfil completo
+        </ion-item>
+        <ion-item button (click)="cerrarSesion()">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          Cerrar Sesión
+        </ion-item>
+      </ion-list>
+    </ng-template>
+  </ion-popover>
 
 <ion-content [fullscreen]="true">
   <ion-list>
