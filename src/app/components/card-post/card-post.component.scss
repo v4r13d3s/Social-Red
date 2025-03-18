@@ -1,4 +1,4 @@
-// Estilos para la tarjeta
+
 ion-card {
     margin: 16px 0;
     border-radius: 8px;
@@ -10,7 +10,6 @@ ion-card {
     margin-bottom: 0;
   }
   
-  // Estos estilos hacen que los textos de comentarios sean clickables
   ion-label p {
     &:nth-child(3), &:nth-child(4) {
       color: #8e8e8e;
