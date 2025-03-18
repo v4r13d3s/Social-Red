@@ -228,4 +228,14 @@ export class AuthService {
     return user?.nombre || user?.displayName || null;
   }
 
+  cerrarSesion() {
+    // Limpiar localStorage
+    localStorage.clear(); // Elimina todo
+    // Si solo quieres eliminar una clave específica:
+    // localStorage.removeItem('nombreClave');
+
+    // Redirigir al login
+    this.router.navigate(['/login']); // Cambia '/login' si la ruta es diferente
+  }
+
 }

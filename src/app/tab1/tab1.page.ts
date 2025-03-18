@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { StatusPopoverComponent } from '../status-popover/status-popover.component';
 import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -20,7 +21,7 @@ export class Tab1Page {
   isPopoverOpen = false; // Estado del popover
   popoverEvent: any;
 
-  constructor(private popoverController: PopoverController) {}
+  constructor(private popoverController: PopoverController, private router: Router) {}
 
 // Función para presentar el popover
 async presentPopover(event: any) {
@@ -52,20 +53,22 @@ openPopover(event: Event) {
   this.isPopoverOpen = true;
 }
 
-// Función para editar perfil
 editarPerfil() {
-  console.log("Editando perfil...");
-  // Aquí iría la lógica para editar el perfil
+  // Redirige al tab3
+  this.router.navigate(['/tabs/tab3']);
 }
 
 // Función para cerrar sesión
 cerrarSesion() {
   console.log("Cerrando sesión...");
+  this._authService.cerrarSesion();
   // Lógica para cerrar sesión, como redirigir al login
 }
 
 ngOnInit(){
   this.username = this._authService.getUserName();
 }
+
+
 
 }
