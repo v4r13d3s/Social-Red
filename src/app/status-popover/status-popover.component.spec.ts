@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ComentariosComponent } from './comentarios.component';
+import { StatusPopoverComponent } from './status-popover.component';
 
-describe('ComentariosComponent', () => {
-  let component: ComentariosComponent;
-  let fixture: ComponentFixture<ComentariosComponent>;
+describe('StatusPopoverComponent', () => {
+  let component: StatusPopoverComponent;
+  let fixture: ComponentFixture<StatusPopoverComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComentariosComponent ],
+      declarations: [ StatusPopoverComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ComentariosComponent);
+    fixture = TestBed.createComponent(StatusPopoverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
