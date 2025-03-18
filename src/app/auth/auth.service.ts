@@ -1,22 +1,22 @@
 import { Injectable, inject } from '@angular/core';
 import {
-    Auth,
-    User as FirebaseUser,
-    GoogleAuthProvider,
-    createUserWithEmailAndPassword,
-    fetchSignInMethodsForEmail,
-    signInWithEmailAndPassword, // Añadida esta importación
-    signInWithPopup,
+  Auth,
+  User as FirebaseUser,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  fetchSignInMethodsForEmail,
+  signInWithEmailAndPassword, // Añadida esta importación
+  signInWithPopup,
 } from '@angular/fire/auth';
 import {
-    Firestore,
-    collection,
-    doc,
-    getDoc,
-    getDocs,
-    query,
-    setDoc,
-    where,
+  Firestore,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  setDoc,
+  where,
 } from '@angular/fire/firestore';
 import { Router } from '@angular/router'; // Importa el Router
 import { BehaviorSubject } from 'rxjs';
@@ -130,7 +130,7 @@ export class AuthService {
       });
 
       // Redirige al usuario a la ruta 'tabs/tab1' después del registro exitoso
-      this.router.navigate(['/tabs/tab1']);
+      this.router.navigate(['/tabs/tab1']); // Sin el slash inicial
 
       return result;
     } catch (error) {

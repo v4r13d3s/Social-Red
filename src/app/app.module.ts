@@ -33,9 +33,8 @@ import { AppComponent } from './app.component';
       })
     ),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => getFirestore()), // Agrega Firestore aquí
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent], 
 })
 export class AppModule {}
-
