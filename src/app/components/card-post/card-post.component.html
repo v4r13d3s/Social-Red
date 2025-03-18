@@ -52,5 +52,4 @@
   </ion-card-content>
 </ion-card>
 
-<!-- Añade esto al final de tu template, fuera del ion-card -->
-<app-comentarios *ngIf="mostrarComentarios" [postId]="1" (close)  ="cerrarComentarios()"></app-comentarios>
+<app-comentarios *ngIf="mostrarComentarios" [postId]="1" (close)="cerrarComentarios()"></app-comentarios>
