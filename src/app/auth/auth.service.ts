@@ -2,12 +2,14 @@ import { Injectable, inject } from '@angular/core';
 import {
   Auth,
   User as FirebaseUser,
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   fetchSignInMethodsForEmail,
   signInWithEmailAndPassword, // Añadida esta importación
-  signInWithPopup,
 } from '@angular/fire/auth';
+
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
+
 import {
   Firestore,
   collection,
