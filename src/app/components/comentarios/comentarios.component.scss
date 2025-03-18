@@ -111,6 +111,7 @@
 }
 
 .comentario-nuevo {
+  color: black;
   display: flex;
   align-items: center;
   padding: 10px 15px;
@@ -123,6 +124,7 @@
   }
 
   ion-input {
+    color: black;
     flex: 1;
     font-size: 14px;
     --padding-start: 0;
