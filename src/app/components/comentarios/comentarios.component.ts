@@ -19,6 +19,7 @@ interface Comentario {
   styleUrls: ['./comentarios.component.scss'],
   standalone: false,
 })
+
 export class ComentariosComponent implements OnInit {
   @Input() postId: number = 0;
   @Output() close = new EventEmitter<void>();
@@ -132,6 +133,7 @@ export class ComentariosComponent implements OnInit {
 
   cerrarComentarios() {
   this.close.emit();
+
 }
 
   toggleLike(comentario: Comentario) {

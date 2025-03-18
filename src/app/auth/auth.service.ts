@@ -220,4 +220,10 @@ export class AuthService {
       throw error;
     }
   }
+
+  getUserName(): String | null {
+    const user = this.userInfo.getValue();
+    return user?.nombre || user?.displayName || null;
+  }
+
 }

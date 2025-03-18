@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavController } from '@ionic/angular'; 
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-tab3',
@@ -8,6 +9,8 @@ import { NavController } from '@ionic/angular';
   standalone: false,
 })
 export class Tab3Page {
+  private _authService = inject(AuthService)
+  username: String | null = null;
 
   publicacion: string = "publicaciones";
 
@@ -19,4 +22,8 @@ export class Tab3Page {
 
   constructor(public navCtrl: NavController) {}
   
+  ngOnInit(){
+    this.username = this._authService.getUserName();
+  }
+
 }
