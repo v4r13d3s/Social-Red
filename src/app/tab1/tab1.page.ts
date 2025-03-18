@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -7,4 +8,7 @@ import { Component, ViewChild } from '@angular/core';
   standalone: false,
 })
 export class Tab1Page {
+
+  constructor(private popoverController: PopoverController) {}
+  
 }
