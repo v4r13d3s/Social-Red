@@ -1,25 +1,3 @@
-<div class="comentarios-container">
-  <button (click)="toggleEmojiPicker()">😀</button>
-  <div *ngIf="mostrarEmojiPicker">
-    <emoji-picker (emojiClick)="agregarEmoji($event)"></emoji-picker>
-  </div>
-  <input [(ngModel)]="nuevoComentario" placeholder="Añadir un comentario..." />
-  <button (click)="agregarComentario()">Comentar</button>
-
-  <div *ngFor="let comentario of comentarios" class="comentario">
-    <p><strong>{{ comentario.usuario }}</strong> {{ comentario.texto }}</p>
-    <div class="acciones">
-      <button (click)="darLike(comentario)">❤️ {{ comentario.likes }}</button>
-      <button (click)="toggleReplyBox(comentario)">Responder</button>
-    </div>
-
-    <div *ngIf="comentario.showReplyBox" class="reply-box">
-      <input #respuestaInput type="text" placeholder="Escribe una respuesta...">
-      <button (click)="responderComentario(comentario, respuestaInput.value); respuestaInput.value=''">Enviar</button>
-    </div>
-
-    <div *ngFor="let respuesta of comentario.respuestas" class="respuesta">
-      <p><strong>{{ respuesta.usuario }}</strong> {{ respuesta.texto }}</p>
-    </div>
-  </div>
-</div>
+<ion-tab>
+  
+</ion-tab>
