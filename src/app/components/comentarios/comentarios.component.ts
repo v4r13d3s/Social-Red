@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { AuthService } from 'src/app/auth/auth.service';
 
 interface Comentario {
   id: number;
-  usuario: string;
+  usuario: any;
   texto: string;
   avatarUrl: string;
   tiempo: string;
@@ -24,6 +25,8 @@ export class ComentariosComponent implements OnInit {
   @Input() postId: number = 0;
   @Output() close = new EventEmitter<void>();
 
+  private _authService = inject(AuthService)
+  username: String | null = null;
   comentarios: Comentario[] = [];
   nuevoComentario: string = '';
   hayMasComentarios: boolean = false;
@@ -33,6 +36,7 @@ export class ComentariosComponent implements OnInit {
 
   ngOnInit() {
     this.abriComentarios();
+    this.username = this._authService.getUserName();
   }
 
   // Método para manejar el evento ionInput con tipado correcto
@@ -44,8 +48,6 @@ export class ComentariosComponent implements OnInit {
   }
 
   abriComentarios() {
-    // Aquí normalmente harías una llamada a tu servicio para obtener comentarios
-    // Este es un ejemplo de datos estáticos
     const comentariosEjemplo: Comentario[] = [
       {
         id: 1,
@@ -118,7 +120,7 @@ export class ComentariosComponent implements OnInit {
     if (this.nuevoComentario.trim()) {
       const nuevoComentario: Comentario = {
         id: this.comentarios.length + 1,
-        usuario: 'tu_usuario', // Normalmente obtendrías esto del usuario logueado
+        usuario: this.username || 'usuario_anonimo', 
         texto: this.nuevoComentario,
         avatarUrl: 'https://ionicframework.com/docs/img/demos/avatar.svg',
         tiempo: 'ahora',

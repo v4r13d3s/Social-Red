@@ -1,4 +1,4 @@
-// Estilos para la tarjeta
+
 ion-card {
     margin: 16px 0;
     border-radius: 8px;
@@ -10,7 +10,6 @@ ion-card {
     margin-bottom: 0;
   }
   
-  // Estos estilos hacen que los textos de comentarios sean clickables
   ion-label p {
     &:nth-child(3), &:nth-child(4) {
       color: #8e8e8e;
@@ -24,12 +23,12 @@ ion-card {
   
   // Estilos para el componente de comentarios cuando esté visible
   app-comentarios {
-    position: fixed;
+    position: relative;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 10%;
     z-index: 1000;
-    height: 80%;
+    height: auto;
     background-color: white;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;

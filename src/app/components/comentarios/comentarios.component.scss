@@ -3,8 +3,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
 }
 
 .comentarios-header {
@@ -26,6 +24,7 @@
     right: 15px;
     font-size: 24px;
     cursor: pointer;
+    color: black;
   }
 }
 
@@ -39,43 +38,45 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 15px;
-  
+
   .comentario-header {
     display: flex;
     flex: 1;
-    
+    color: black;
+
     ion-avatar {
       width: 32px;
       height: 32px;
       margin-right: 12px;
     }
-    
+
     .comentario-info {
       flex: 1;
-      
+
       .comentario-usuario-contenido {
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
         gap: 5px;
-        
+
         .usuario {
+          color: black;
           font-weight: 600;
           font-size: 13px;
         }
-        
+
         .contenido {
           font-size: 14px;
+          color: black;
           word-break: break-word;
         }
       }
-      
+
       .comentario-detalles {
         margin-top: 4px;
         font-size: 12px;
         color: #8e8e8e;
-        
+
         span {
           margin-right: 12px;
           cursor: pointer;
@@ -83,12 +84,12 @@
       }
     }
   }
-  
+
   .like-button {
     padding: 0;
     margin: 0;
     height: 32px;
-    
+
     ion-icon {
       font-size: 12px;
     }
@@ -99,7 +100,7 @@
   padding: 10px 15px;
   text-align: center;
   border-top: 1px solid #efefef;
-  
+
   span {
     color: #0095f6;
     font-weight: 600;
@@ -109,24 +110,26 @@
 }
 
 .comentario-nuevo {
+  color: black;
   display: flex;
   align-items: center;
   padding: 10px 15px;
   border-top: 1px solid #efefef;
-  
+
   ion-avatar {
     width: 32px;
     height: 32px;
     margin-right: 12px;
   }
-  
+
   ion-input {
+    color: black;
     flex: 1;
     font-size: 14px;
     --padding-start: 0;
     --padding-end: 0;
   }
-  
+
   ion-button {
     font-size: 14px;
     font-weight: 600;
@@ -134,7 +137,7 @@
     --color-focused: #0095f6;
     --color-activated: #0095f6;
     height: 30px;
-    
+
     &[disabled] {
       --color: #c0dffd;
     }
