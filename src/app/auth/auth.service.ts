@@ -223,10 +223,10 @@ export class AuthService {
     }
   }
 
-  getUserName(): String | null {
-    const user = this.userInfo.getValue();
-    return user?.nombre || user?.displayName || null;
-  }
+  getUserName(): string {
+  const user = this.userInfo.getValue();
+  return user?.nombre || user?.displayName || ''; // Devuelve un string vacío si es null
+}
 
   cerrarSesion() {
     // Limpiar localStorage

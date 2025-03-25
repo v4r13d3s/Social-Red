@@ -1,47 +1,47 @@
 <ion-card>
   <ion-item>
     <ion-avatar aria-hidden="true" slot="start">
-      <img alt="" src="assets/img/usuario.jpg" />
+      <img alt="Avatar de usuario" src="assets/img/usuario.jpg" />
     </ion-avatar>
-    <ion-label>{{username}}</ion-label>
+    <ion-label>{{ username }}</ion-label>
     <ion-button shape="round" fill="clear"
       style="display: flex; align-items: center; justify-content: center; padding: 10px;">
       <ion-icon name="ellipsis-horizontal" style="font-size: 15px; color: white;"></ion-icon>
     </ion-button>
   </ion-item>
-  <img alt="Silhouette of mountains" src="../../../assets/icon/235.jpg" />
+
+  <!-- Aquí se coloca el contenido (imagen o video) aleatorio -->
   <ion-card-header>
     <ion-grid>
       <ion-row class="post-actions" style="display: flex; justify-content: space-between; align-items: center;">
         <ion-col size="auto">
           <ion-button fill="clear" style="display: flex; align-items: center;">
             <ion-icon name="heart-outline"></ion-icon>
-            <p> 18</p>
+            <p>{{ publicacion.likes }}</p>
           </ion-button>
         </ion-col>
         <ion-col size="auto">
           <ion-button fill="clear" style="display: flex; align-items: center;" (click)="abrirComentarios()">
             <ion-icon name="chatbubble-outline"></ion-icon>
-            <p> 6 </p>
-          </ion-button>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-button fill="clear" style="display: flex; align-items: center;">
-            <ion-icon name="paper-plane-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="auto" style="text-align: right;">
-          <ion-button fill="clear">
-            <ion-icon name="bookmark-outline"></ion-icon>
+            <p> {{ totalComentarios }} </p>
           </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
+
+    <!-- Mostrar el contenido aleatorio (Imagen o Video) -->
     <ion-item>
       <ion-label>
-        <h3>17.636 Me gusta</h3>
-        <p> Cuando el profe pide proyecto y el que no hizo nada se tiene que rifar </p>
-        <p (click)="abrirComentarios()" style="cursor: pointer;">Ver los 47 comentarios</p>
+        <h3>{{ publicacion.likes }} Me gusta</h3>
+        <p *ngIf="publicacion.type === 'texto'">{{ publicacion.content }}</p>
+        <ion-img *ngIf="publicacion.type === 'imagen'" [src]="publicacion.content" class="publicacion-imagen"></ion-img>
+        <video *ngIf="publicacion.type === 'video'" controls class="publicacion-video">
+          <source [src]="publicacion.content" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <p (click)="abrirComentarios()" style="cursor: pointer;">
+          Ver los {{ totalComentarios }} comentarios
+        </p>        
         <p (click)="abrirComentarios()" style="cursor: pointer;">Agregar un comentario...</p>
       </ion-label>
     </ion-item>
@@ -52,4 +52,5 @@
   </ion-card-content>
 </ion-card>
 
+<!-- Componente de comentarios -->
 <app-comentarios *ngIf="mostrarComentarios" [postId]="1" (close)="cerrarComentarios()"></app-comentarios>

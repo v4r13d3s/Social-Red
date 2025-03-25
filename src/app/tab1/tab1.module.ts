@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { ComponentsModule } from '../components/components.module';
+import { CardPostComponent } from '../components/card-post/card-post.component';
 
 @NgModule({
   imports: [
