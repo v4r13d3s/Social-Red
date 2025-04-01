@@ -1,5 +1,8 @@
 <ion-searchbar (ionInput)="onSearch($event)" placeholder="Buscar usuarios..."></ion-searchbar>
 
+<!-- Spinner mientras carga -->
+<ion-spinner *ngIf="loading"></ion-spinner>
+
 <div *ngIf="usuarios.length > 0">
   <ion-list>
     <ion-item *ngFor="let usuario of usuarios">
@@ -14,6 +17,7 @@
   </ion-list>
 </div>
 
-<div *ngIf="usuarios.length === 0 && searchQuery.length > 0">
+<!-- Mensaje cuando no hay resultados -->
+<div *ngIf="usuarios.length === 0 && searchQuery.length > 0 && !loading">
   <p>No se encontraron usuarios.</p>
 </div>
