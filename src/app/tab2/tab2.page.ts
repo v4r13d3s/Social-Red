@@ -42,5 +42,7 @@ export class Tab2Page {
       { type: 'image', src: 'assets/img/chica.jpg', caption: 'Stylish' },
     ];
   }
+
+  
   
 }

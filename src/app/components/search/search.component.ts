@@ -1,5 +1,6 @@
+// search.component.ts
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-search',
@@ -8,29 +9,31 @@ import { HttpClient } from '@angular/common/http';
   standalone: false,
 })
 export class SearchComponent implements OnInit {
-
   usuarios: any[] = [];
-  apiUrl = 'https://apirestful-0l0n.onrender.com/api/usuarios';  // URL de la API
-  searchQuery: string = '';  // Nueva variable para almacenar la consulta de búsqueda
+  searchQuery: string = '';
+  loading: boolean = false; // Para mostrar un spinner
 
-  constructor(private http: HttpClient) { }
+  constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit() {}
 
   onSearch(event: any) {
-    this.searchQuery = event.target.value;  // Almacenar la búsqueda en searchQuery
+    this.searchQuery = event.detail.value; // Para Ionic es event.detail.value
 
-    if (this.searchQuery && this.searchQuery.trim() !== '') {
-      this.http.get<any[]>(`${this.apiUrl}?search=${this.searchQuery}`).subscribe(
+    if (this.searchQuery.trim() !== '') {
+      this.loading = true; // Mostrar cargando
+      this.usuarioService.buscarUsuarios(this.searchQuery).subscribe(
         (response) => {
-          this.usuarios = response.map(usuario => ({
+          this.usuarios = response.map((usuario) => ({
             nombre: usuario.nombre,
-            imagen: usuario.imagen,
-            estado: usuario.estado
+            imagen: usuario.imageUrl || 'assets/default-avatar.png', // Imagen por defecto
+            estado: usuario.estado,
           }));
+          this.loading = false; // Ocultar cargando
         },
         (error) => {
           console.error('Error al buscar usuarios:', error);
+          this.loading = false;
         }
       );
     } else {

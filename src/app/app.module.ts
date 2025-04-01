@@ -11,6 +11,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore'; // Imp
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatusPopoverComponent } from './status-popover/status-popover.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, StatusPopoverComponent],
@@ -19,6 +20,7 @@ import { StatusPopoverComponent } from './status-popover/status-popover.componen
     IonicModule.forRoot(),
     AppRoutingModule,
     CommonModule,
+    HttpClientModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
